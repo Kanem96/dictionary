@@ -4,3 +4,32 @@
   padding: 2rem;
   text-align: center;
 }
+
+.dictionary_container {
+  border: 2px solid white;
+  background: rgb(159, 200, 220);
+  width: 500px;
+  height: 500px;
+  padding: 10px;
+}
+
+.search_container {
+ margin: 10px;
+}
+
+.search-bar {
+  background: white;
+  border-radius: 6px;
+  margin-right:4px;
+  width: 200px;
+}
+
+.search-button {
+  background: rgb(195, 113, 222);
+  border-radius: 12px;
+  color: white;
+}
+
+.search-button:hover {
+  background: rgb(218, 157, 238);
+}
