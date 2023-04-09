@@ -5,13 +5,10 @@ import Definition from "./Definition";
 const DictionaryContainer: FunctionComponent = () => {
   const [searchValue, setSearchValue] = useState("");
 
-  useEffect(() => {
-  }, [searchValue]);
-
   return (
     <div className="dictionary_container">
       <Search setSearchValue={setSearchValue} />
-      <Definition searchValue={searchValue}/>
+      <Definition searchValue={searchValue} />
     </div>
   );
 };
