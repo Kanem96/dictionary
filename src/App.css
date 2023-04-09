@@ -40,3 +40,8 @@
 .search-button:hover {
   background: rgb(218, 157, 238);
 }
+
+.definition_container p {
+  color: black;
+  font-size: 2rem;
+}
