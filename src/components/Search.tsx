@@ -1,19 +1,31 @@
-import { FunctionComponent } from 'react'
+import { FormEvent, FunctionComponent, useState } from "react";
 
-const Search: FunctionComponent = () => {
-
-    const handleClick = (event: Event) => {
-        event.preventDefault()
-    }
-
-  return (
-    <section className='search_container' >
-        <form>
-            <input type="text" className="search-bar" />
-            <button className="search-button" onClick={() => handleClick}>Search</button>
-        </form>
-    </section>
-  )
+interface SearchProps {
+  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export default Search
+const Search: FunctionComponent<SearchProps> = ({ setSearchValue }) => {
+  const [newSearch, setNewSearch] = useState("");
+
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
+    setSearchValue(() => newSearch);
+    setNewSearch("");
+  };
+
+  return (
+    <section className="search_container">
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          className="search-bar"
+          value={newSearch}
+          onChange={(event) => setNewSearch(event.target.value)}
+        />
+        <button className="search-button">Search</button>
+      </form>
+    </section>
+  );
+};
+
+export default Search;

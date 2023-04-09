@@ -1,12 +1,17 @@
-import { FunctionComponent } from 'react'
-import Search from './Search'
+import { FunctionComponent, useEffect, useState } from "react";
+import Search from "./Search";
 
 const DictionaryContainer: FunctionComponent = () => {
+  const [searchValue, setSearchValue] = useState("");
+
+  useEffect(() => {
+  }, [searchValue]);
+
   return (
     <div className="dictionary_container">
-        <Search /> 
+      <Search setSearchValue={setSearchValue} />
     </div>
-  )
-}
+  );
+};
 
-export default DictionaryContainer
+export default DictionaryContainer;
